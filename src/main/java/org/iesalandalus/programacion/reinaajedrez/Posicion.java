@@ -5,6 +5,11 @@ public class Posicion {
 
 	private char columna;
 
+	public Posicion(int numFila, char letColumna) {
+		setFila(numFila);
+		setColumna(letColumna);
+	}
+
 	public int getFila() {
 		return fila;
 	}
@@ -23,44 +28,44 @@ public class Posicion {
 	}
 
 	private void setColumna(char columna) {
-		switch(columna) {
-		
+		switch (columna) {
+
 		case 'A':
 			this.columna = columna;
 			break;
-		
+
 		case 'B':
 			this.columna = columna;
 			break;
-		
+
 		case 'C':
 			this.columna = columna;
 			break;
-		
+
 		case 'D':
 			this.columna = columna;
 			break;
-			
+
 		case 'E':
 			this.columna = columna;
 			break;
-			
+
 		case 'F':
 			this.columna = columna;
 			break;
-			
+
 		case 'G':
 			this.columna = columna;
 			break;
-			
+
 		case 'H':
 			this.columna = columna;
 			break;
-			
+
 		default:
 			throw new IllegalArgumentException("El valor de la columna es incorrecto.");
 		}
-		
+
 	}
 
 }
