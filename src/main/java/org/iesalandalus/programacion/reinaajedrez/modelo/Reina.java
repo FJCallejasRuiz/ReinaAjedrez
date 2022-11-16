@@ -5,8 +5,10 @@ public class Reina {
 	private Color color;
 	private Posicion posicion;
 
-	public Reina(Reina reina) {
-
+	
+	public Reina() {
+		color=Color.BLANCO;
+		posicion=new Posicion(1,'d');
 	}
 
 	public Color getColor() {
@@ -48,4 +50,9 @@ public class Reina {
 			throw new IllegalArgumentException("ERROR: Posición no válida.");
 		}
 	}
+	
+	
+	
+	
+	
 }
