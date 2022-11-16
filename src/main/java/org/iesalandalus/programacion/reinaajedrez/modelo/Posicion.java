@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.reinaajedrez;
+package org.iesalandalus.programacion.reinaajedrez.modelo;
 
 import java.util.Objects;
 
@@ -11,10 +11,14 @@ public class Posicion {
 		setFila(numFila);
 		setColumna(letColumna);
 	}
-
+	
 	public Posicion(Posicion posicion) {
+		if (posicion == null){
+			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
+		}else {
 		fila = posicion.getFila();
 		columna = posicion.getColumna();
+		}
 	}
 
 	public int getFila() {
@@ -23,7 +27,7 @@ public class Posicion {
 
 	private void setFila(int fila) {
 		if (fila < 1 || fila > 8) {
-			throw new IllegalArgumentException("El valor de la fila es incorrecto.");
+			throw new IllegalArgumentException("ERROR: Fila no válida.");
 		} else {
 			this.fila = fila;
 		}
@@ -37,40 +41,40 @@ public class Posicion {
 	private void setColumna(char columna) {
 		switch (columna) {
 
-		case 'A':
+		case 'a':
 			this.columna = columna;
 			break;
 
-		case 'B':
+		case 'b':
 			this.columna = columna;
 			break;
 
-		case 'C':
+		case 'c':
 			this.columna = columna;
 			break;
 
-		case 'D':
+		case 'd':
 			this.columna = columna;
 			break;
 
-		case 'E':
+		case 'e':
 			this.columna = columna;
 			break;
 
-		case 'F':
+		case 'f':
 			this.columna = columna;
 			break;
 
-		case 'G':
+		case 'g':
 			this.columna = columna;
 			break;
 
-		case 'H':
+		case 'h':
 			this.columna = columna;
 			break;
 
 		default:
-			throw new IllegalArgumentException("El valor de la columna es incorrecto.");
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
 		}
 
 	}
@@ -92,4 +96,12 @@ public class Posicion {
 		return columna == other.columna && fila == other.fila;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "fila=" + fila + ", columna=" + columna;
+	}
+	
+	
+	
 }
