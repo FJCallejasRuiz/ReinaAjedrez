@@ -10,6 +10,16 @@ public class Reina {
 		color=Color.BLANCO;
 		posicion=new Posicion(1,'d');
 	}
+	
+	public Reina(Color color) {
+		if (color == Color.BLANCO) {
+			color=Color.BLANCO;
+			posicion=new Posicion(1,'d');
+		}else {
+			color=Color.NEGRO;
+			posicion=new Posicion(8,'b');
+		}
+	}
 
 	public Color getColor() {
 		return color;
