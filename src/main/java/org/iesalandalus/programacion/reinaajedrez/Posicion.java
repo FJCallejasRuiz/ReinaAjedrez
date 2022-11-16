@@ -9,6 +9,11 @@ public class Posicion {
 		setFila(numFila);
 		setColumna(letColumna);
 	}
+	
+	public Posicion(Posicion posicion) {
+		fila = posicion.getFila();
+		columna = posicion.getColumna();
+	}
 
 	public int getFila() {
 		return fila;
