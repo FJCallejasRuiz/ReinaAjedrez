@@ -110,5 +110,7 @@ public class Consola {
 	public static void despedirse() {
 		System.out.println("¡Adios!");
 	}
+
+	
 	
 }
