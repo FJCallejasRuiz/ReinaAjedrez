@@ -117,8 +117,8 @@ public class Reina {
 				colTemporal -= pasos;
 			break;	
 		}
-		System.out.println("Hola!, las variables son " + filaTemporal +" y "+ colTemporal);
 		
+	
 		if (filaTemporal>=1 && filaTemporal<=8 && (
 				colTemporal == 'a' ||
 				colTemporal == 'b' ||
