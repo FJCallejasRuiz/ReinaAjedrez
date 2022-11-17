@@ -106,4 +106,9 @@ public class Consola {
 		return pasosReina;
 	}
 
+	
+	public static void despedirse() {
+		System.out.println("¡Adios!");
+	}
+	
 }
