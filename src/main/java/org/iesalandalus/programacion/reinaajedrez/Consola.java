@@ -60,8 +60,8 @@ public class Consola {
 		return Color.NEGRO;
 	}
 
-	public static Direccion mostrarMenuDirecciones() {
-		System.out.println("Elija la dirección.");
+	public static void mostrarMenuDirecciones() {
+		System.out.println("Las direcciones de movimiento son:");
 		System.out.println("1. Norte.");
 		System.out.println("2. Noreste.");
 		System.out.println("3. Este.");
@@ -70,6 +70,10 @@ public class Consola {
 		System.out.println("6. Suroeste.");
 		System.out.println("7. Oeste.");
 		System.out.println("8. Noroeste.");
+	}
+
+	public static Direccion elegirDireccion() {
+		System.out.println("Elija la opción de movimiento.");
 		int direccionMenu = Entrada.entero();
 		while (direccionMenu < 1 || direccionMenu > 8) {
 			System.out.println("El número introducido no pertenece a una opción, inténtelo de nuevo.");
@@ -95,12 +99,5 @@ public class Consola {
 		}
 
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }
