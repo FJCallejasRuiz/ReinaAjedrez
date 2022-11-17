@@ -29,18 +29,18 @@ public class Consola {
 		case 1:
 			System.out.println("Has escogido la opción '1. Crear reina por defecto.'");
 
-			break;
+			return numeroMenu;
 		case 2:
 			System.out.println("Has escogido la opción '2. Crear reina eligiendo un color.'");
-			break;
+			return numeroMenu;
 		case 3:
 			System.out.println("Has escogido la opción '3. Mover reina.'");
-			break;
-		case 4:
+			return numeroMenu;
+		default:
 			System.out.println("Has escogido la opción '4. Salir del menú.'");
-			break;
+			return numeroMenu;
 		}
-		return numeroMenu;
+		
 	}
 
 	public static Color elegirOpcion() {
@@ -99,5 +99,4 @@ public class Consola {
 		}
 
 	}
-
 }
