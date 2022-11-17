@@ -39,7 +39,54 @@ public class Consola {
 			break;
 		}
 		return numeroMenu;
+		}
 
+	public static int elegirOpcion() {
+		System.out.println("Elija el color de la reina.");
+		System.out.println("1. BLANCA.");
+		System.out.println("2. NEGRA.");
+		int colorMenu=Entrada.entero();
+		while (colorMenu!=1 || colorMenu!=2) {
+			System.out.println("El número introducido no pertenece a una opción, inténtelo de nuevo.");
+			colorMenu = Entrada.entero();
+		}
+		switch (colorMenu) {
+
+		case 1:
+			System.out.println("Has escogido la opción '1. BLANCA.'");
+			break;
+		case 2:
+			System.out.println("Has escogido la opción '2. NEGRA.'");
+			break;
+		}
+		return colorMenu;
 	}
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
