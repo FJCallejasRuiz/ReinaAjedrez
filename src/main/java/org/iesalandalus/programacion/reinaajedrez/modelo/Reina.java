@@ -9,17 +9,22 @@ public class Reina {
 
 	
 	public Reina() {
-		color=Color.BLANCO;
+		this.setColor(Color.BLANCO);
 		posicion=new Posicion(1,'d');
 	}
 	
 	public Reina(Color color) {
+		if (color == null){
+			throw new NullPointerException("ERROR: El color no puede ser nulo.");
+		}else {
+			
 		if (color == Color.BLANCO) {
-			color=Color.BLANCO;
+			this.setColor(Color.BLANCO);
 			posicion=new Posicion(1,'d');
 		}else {
-			color=Color.NEGRO;
-			posicion=new Posicion(8,'b');
+			this.setColor(Color.NEGRO);
+			posicion=new Posicion(8,'d');
+		}
 		}
 	}
 
@@ -65,11 +70,11 @@ public class Reina {
 	
 	public void mover (Direccion direccion, int pasos) throws OperationNotSupportedException {
 		if (direccion == null) {
-			throw new NullPointerException("ERROR: No es posible una dirección nula.");
+			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
 		}
 		
 		if (pasos<1 || pasos>7) {
-			throw new IllegalArgumentException("ERROR: Número no válidos.");
+			throw new IllegalArgumentException("ERROR: El número de pasos debe estar comprendido entre 1 y 7.");
 		}
 		
 		int filaTemporal=posicion.getFila();
@@ -104,31 +109,39 @@ public class Reina {
 			break;
 			
 			case OESTE:
-				colTemporal += pasos;
+				colTemporal -= pasos;
 			break;
 			
 			case NOROESTE:
 				filaTemporal += pasos;
-				colTemporal += pasos;
+				colTemporal -= pasos;
 			break;	
 		}
-		if (filaTemporal<1 || filaTemporal>8 || (
-				colTemporal != 'a' ||
-				colTemporal != 'b' ||
-				colTemporal != 'c' ||
-				colTemporal != 'd' ||
-				colTemporal != 'e' ||	
-				colTemporal != 'f' ||
-				colTemporal != 'g' ||
-				colTemporal != 'h')) {
-			throw new OperationNotSupportedException("ERROR: No es posible que la reina esté fuera del tablero.");
-			
-		}else {
+		System.out.println("Hola!, las variables son " + filaTemporal +" y "+ colTemporal);
+		
+		if (filaTemporal>=1 && filaTemporal<=8 && (
+				colTemporal == 'a' ||
+				colTemporal == 'b' ||
+				colTemporal == 'c' ||
+				colTemporal == 'd' ||
+				colTemporal == 'e' ||	
+				colTemporal == 'f' ||
+				colTemporal == 'g' ||
+				colTemporal == 'h')) {
 			posicion=new Posicion(filaTemporal,colTemporal);
+		}else {
+			throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 		}
+		
+		
+		
+		
 		
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "color=" + color + ", posicion=(fila=" + posicion.getFila() +", columna="+ posicion.getColumna()+")";
+	}
 	
 }
