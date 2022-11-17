@@ -40,7 +40,7 @@ public class Consola {
 			System.out.println("Has escogido la opción '4. Salir del menú.'");
 			return numeroMenu;
 		}
-		
+
 	}
 
 	public static Color elegirOpcion() {
@@ -99,4 +99,11 @@ public class Consola {
 		}
 
 	}
+
+	public static int elegirPasos() {
+		System.out.println("Por favor, elija el número de pasos a mover la reina.");
+		int pasosReina = Entrada.entero();
+		return pasosReina;
+	}
+
 }
