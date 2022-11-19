@@ -1,6 +1,6 @@
 package org.iesalandalus.programacion.reinaajedrez;
 import javax.naming.OperationNotSupportedException;
-
+import org.iesalandalus.programacion.reinaajedrez.modelo.Posicion;
 import org.iesalandalus.programacion.reinaajedrez.modelo.Color;
 import org.iesalandalus.programacion.reinaajedrez.modelo.Direccion;
 import org.iesalandalus.programacion.reinaajedrez.modelo.Reina;
@@ -26,6 +26,15 @@ public class MainApp {
 		reina.mover(direccionmain, pasosmain);
 	}
 
+	private void mostrarReina() {
+		if(reina==null){
+			System.out.println("No hay ninguna reina creada.");
+		}else {
+			System.out.print("Los atributos de la reina son: ");
+			reina.toString();
+		}
+	}
+	
 	int opcion = Consola.elegirOpcionMenu();
 	{
 
