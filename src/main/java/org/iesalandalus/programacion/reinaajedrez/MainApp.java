@@ -1,6 +1,8 @@
 package org.iesalandalus.programacion.reinaajedrez;
+import javax.naming.OperationNotSupportedException;
 
 import org.iesalandalus.programacion.reinaajedrez.modelo.Color;
+import org.iesalandalus.programacion.reinaajedrez.modelo.Direccion;
 import org.iesalandalus.programacion.reinaajedrez.modelo.Reina;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
@@ -14,6 +16,14 @@ public class MainApp {
 
 		Reina reina = new Reina(color);
 
+	}
+	
+	private void mover() throws OperationNotSupportedException, NullPointerException, IllegalArgumentException{
+		Consola.mostrarMenuDirecciones(); 
+		Direccion direccionmain=Consola.elegirDireccion();
+		int pasosmain=Consola.elegirPasos();
+		
+		reina.mover(direccionmain, pasosmain);
 	}
 
 	int opcion = Consola.elegirOpcionMenu();

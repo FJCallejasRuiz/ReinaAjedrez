@@ -61,7 +61,7 @@ public class Reina {
 		}
 	}
 
-	public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException {
+	public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException, NullPointerException, IllegalArgumentException {
 		if (direccion == null) {
 			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
 		}
