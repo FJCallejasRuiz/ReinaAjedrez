@@ -28,16 +28,21 @@ public class Consola {
 
 		case 1:
 			System.out.println("Has escogido la opción '1. Crear reina por defecto.'");
+			System.out.println("La posición de la reina por defecto es 1 d.");
+			System.out.println("-------------------------------------------");
 
 			return numeroMenu;
 		case 2:
 			System.out.println("Has escogido la opción '2. Crear reina eligiendo un color.'");
+			System.out.println("-------------------------------------------");
 			return numeroMenu;
 		case 3:
 			System.out.println("Has escogido la opción '3. Mover reina.'");
+			System.out.println("-------------------------------------------");
 			return numeroMenu;
 		default:
 			System.out.println("Has escogido la opción '4. Salir del menú.'");
+			System.out.println("-------------------------------------------");
 			return numeroMenu;
 		}
 
@@ -48,15 +53,17 @@ public class Consola {
 		System.out.println("1. BLANCA.");
 		System.out.println("2. NEGRA.");
 		int colorMenu = Entrada.entero();
-		while (colorMenu != 1 || colorMenu != 2) {
+		while (colorMenu != 1 && colorMenu != 2) {
 			System.out.println("El número introducido no pertenece a una opción, inténtelo de nuevo.");
 			colorMenu = Entrada.entero();
 		}
 		if (colorMenu == 1) {
-			System.out.println("Has escogido la opción '1. BLANCA.'");
+			System.out.println("Has escogido la opción '1. BLANCA.'. Su posición es 1 d.");
+			System.out.println("-------------------------------------------");
 			return Color.BLANCO;
 		} else
-			System.out.println("Has escogido la opción '2. NEGRA.'");
+			System.out.println("Has escogido la opción '2. NEGRA.'. Su posición es 8 d.");
+		System.out.println("-------------------------------------------");
 		return Color.NEGRO;
 	}
 
@@ -109,6 +116,7 @@ public class Consola {
 	
 	public static void despedirse() {
 		System.out.println("¡Adios!");
+		System.out.println("-------------------------------------------");
 	}
 
 	
